@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: basic-authentication-service
+
+  # ===== Database (MySQL) =====
+  datasource:
+    url: "jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:basic_authentication}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC"
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ===== JPA / Hibernate =====
+  # Liquibase owns the schema; Hibernate only validates the entities against it.
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
