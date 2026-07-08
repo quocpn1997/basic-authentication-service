@@ -14,7 +14,7 @@ import rey.be.authenticationservice.api.mapper.RegisterMapper;
 import rey.be.authenticationservice.domain.service.RegisterService;
 
 @RestController
-@RequestMapping("/api/auth/register")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class RegisterController {
 
@@ -22,7 +22,7 @@ public class RegisterController {
 
     private final RegisterMapper registerMapper;
 
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<RegisterResponse> register(@Valid @RequestBody RegisterRequest request) {
         var user = registerMapper.toDomain(request);
         var saved = registerService.register(user);
