@@ -1,0 +1,7 @@
+Verify your email address
+
+Use the verification code below to complete your registration:
+
+    {{code}}
+
+If you didn't request it, you can safely ignore this email.
